@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApplication">
         <activity
+            android:name=".ShowDetail"
+            android:exported="false" />
+        <activity
+            android:name=".StudentDetail"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
