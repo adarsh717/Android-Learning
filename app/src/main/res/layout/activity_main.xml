@@ -84,10 +84,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@color/blue"
         android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="@+id/AgeText"
         app:layout_constraintStart_toStartOf="@+id/AgeText"
         app:layout_constraintTop_toBottomOf="@+id/AgeText" />
+
+    <Button
+        android:id="@+id/implecent_intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

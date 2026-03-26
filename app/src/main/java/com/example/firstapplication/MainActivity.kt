@@ -1,13 +1,19 @@
 package com.example.firstapplication
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.net.URI
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
 //    lateinit var login: Button
@@ -21,7 +27,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var age: TextView
     lateinit var submit: Button
 
+    lateinit var implicit: Button
 
+    @RequiresApi(Build.VERSION_CODES.BAKLAVA)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +46,19 @@ class MainActivity : AppCompatActivity() {
         Name=findViewById(R.id.NameText)
         age=findViewById(R.id.AgeText)
         submit=findViewById(R.id.Submit)
+        implicit=findViewById(R.id.implecent_intent)
+
 
         submit.setOnClickListener {
             val student= Intent(this,ShowDetail::class.java)
             student.putExtra("name",Name.text.toString())
-            student.putExtra("Age",age.text.toString())
+            student.putExtra("Age",age.text.toString().toIntOrNull())
             startActivity(student)
+        }
+        implicit.setOnClickListener {
+            var intent= Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/adarsh_yadav04/"))
+            intent.addCategory(Intent.CATEGORY_BROWSABLE)
+            startActivity(intent)
         }
 
 //        homebutton=findViewById<Button>(R.id.homebutton)

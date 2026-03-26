@@ -13,10 +13,14 @@
         android:theme="@style/Theme.FirstApplication">
         <activity
             android:name=".ShowDetail"
-            android:exported="false" />
-        <activity
-            android:name=".StudentDetail"
-            android:exported="false" />
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plaintext"/>
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
